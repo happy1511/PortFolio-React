@@ -1,0 +1,251 @@
+import React from "react";
+import NavBar from "../components/NavBar";
+import { contact_icon, waving_hand } from "../assets/svgs/svgs";
+import { TypeAnimation } from "react-type-animation";
+import Tag from "../components/Tag";
+import CodeText from "../components/CodeText";
+import AnimatedCursor from "react-animated-cursor";
+import Header from "../components/Header";
+import {
+  skillArr,
+  skillWithIcon,
+  socialTags,
+  social_links,
+} from "../assets/data/data";
+import { SkillSection } from "../components/Skill";
+import Timeline from "../components/TimeLine";
+import Footer from "../components/Footer";
+
+const jobs = [
+  "Fullstack Developer",
+  1000,
+  "React Native Developer",
+  1000,
+  "React Developer",
+  1000,
+  "Freelancer",
+  1000,
+];
+
+const image =
+  "https://genz-nextjs-v3.vercel.app/assets/imgs/page/homepage1/banner.png";
+
+const backImage1 =
+  "https://genz-nextjs-v3.vercel.app/assets/imgs/template/pattern-1.svg";
+
+const PortFolio = () => {
+  return (
+    <div className="flex flex-col items-center bg-themebg-light dark:bg-themebg-dark">
+      {/* <AnimatedCursor
+        innerSize={10}
+        outerSize={35}
+        outerAlpha={0.2}
+        innerScale={1}
+        hasBlendMode={true}
+        outerScale={2}
+        color={mode === "dark" ? "255, 255, 255" : "0, 0, 0"}
+      /> */}
+      <div className="max-w-screen-xl w-full min-h-[100dvh]">
+        <NavBar />
+        <section
+          className="flex flex-col items-center justify-center min-h-[80vh] py-3 px-7"
+          id="about"
+        >
+          <div className="w-full flex gap-7 lg:items-center items-start flex-col md:flex-row">
+            <div className="w-full md:w-[60%]">
+              <p className="text-themeText-light dark:text-themebg-light flex items-center text-[20px]">
+                Hello! <span>{waving_hand()}</span>
+              </p>
+              <h1 className="text-themeText-light dark:text-themebg-light text-[50px] font-bold">
+                I'm <span className="text-primary1">Happy Patel </span>
+              </h1>
+              <h1>
+                <TypeAnimation
+                  sequence={jobs}
+                  wrapper="span"
+                  speed={50}
+                  style={{ fontSize: "40px", display: "inline-block" }}
+                  repeat={Infinity}
+                  className="text-themeText-light dark:text-themebg-light"
+                />
+              </h1>
+              <p className="text-themeText-light dark:text-themeText-dark opacity-85 text-[14px] py-1">
+                I craft engaging, user-friendly, visually stunning online
+                experiences and mobile apps using React Native.I turn ideas into
+                dynamic websites and apps that exceed expectations. From
+                responsive layouts to cutting-edge tech integration, I
+                specialize in it all.
+                <br />
+                Let's collaborate and bring your digital dreams to life!
+              </p>
+              <div className="flex gap-2 flex-wrap py-3">
+                {socialTags.map((tag, index) => (
+                  <Tag key={index} {...tag} />
+                ))}
+              </div>
+              <div>
+                <button className="text-nowrap text-transparent bg-clip-text font-bold text-[18px] flex items-center gap-1 py-2 px-5 border rounded-full border-borderTheme-dark dark:border-borderTheme-light bg-gradient-to-l from-primary1 to-primary2 hover:border-primary1 dark:hover:border-borderTheme-light hover:shadow-inner">
+                  Contact Me{" "}
+                  <span className="text-primary1">{contact_icon()}</span>
+                </button>
+              </div>
+            </div>
+            <div className="md:w-[40%] w-full flex justify-center">
+              <CodeText>
+                <code className="text-themeText-dark flex flex-col gap-1">
+                  <div>
+                    <span className="text-primary1">const</span> coder{" "}
+                    <span className="text-primary1">=</span>{" "}
+                    <span className="text-white opacity-50">{"{"}</span>
+                  </div>
+                  <div className="text-justify ps-4">
+                    name:
+                    <span className="text-yellow-300"> 'Happy Patel'</span>,
+                  </div>
+                  <div className="flex flex-wrap ps-4">
+                    Skills:&nbsp;
+                    <span className="text-white opacity-50">{"["}</span>&nbsp;
+                    {skillArr.map((text, index) => (
+                      <p key={index}>
+                        '<span className="text-yellow-300">{text}</span>'
+                        {skillArr.length > index + 1 && ","}&nbsp;
+                      </p>
+                    ))}
+                    <span className="text-white opacity-50">{"]"}</span>,
+                  </div>
+                  <div className="text-justify ps-4">
+                    hardWorker:
+                    <span className="text-orange-500"> true</span>,
+                  </div>
+                  <div className="text-justify ps-4">
+                    quickLearner:
+                    <span className="text-orange-500"> true</span>,
+                  </div>
+                  <div className="text-justify ps-4">
+                    problemSolver:
+                    <span className="text-orange-500"> true</span>,
+                  </div>
+                  <div>
+                    <span className="text-white opacity-50">{"}"}</span>
+                  </div>
+                </code>
+              </CodeText>
+            </div>
+          </div>
+        </section>
+        <section className="py-3 px-7" id="skills">
+          <Header title="What I know" />
+          <div className="flex justify-between items-start flex-wrap gap-3">
+            {Object.keys(skillWithIcon).map((key, index) => (
+              <SkillSection
+                key={index}
+                title={key}
+                skills={skillWithIcon[key]}
+              />
+            ))}
+          </div>
+        </section>
+        <section className="py-3 px-7 my-[80px]" id="experience">
+          <Header title="My Experiences" />
+          <div className="flex  items-start flex-wrap gap-3">
+            <Timeline dataKey={"Work"} />
+          </div>
+        </section>
+        <section className="py-3 px-7 my-[80px]" id="projects">
+          <Header title="Projects" />
+          <div className="flex  items-start flex-wrap gap-3">
+            <Timeline dataKey={"Projects"} />
+          </div>
+        </section>
+        <section className="py-3 px-7 my-[80px]" id="education">
+          <Header title="Education" />
+          <div className="flex  items-start flex-wrap gap-3">
+            <Timeline dataKey={"Education"} />
+          </div>
+        </section>
+        <section
+          className="py-3 px-7 my-[80px]  text-themeText-light dark:text-themeText-dark "
+          id="contact"
+        >
+          <Header title="Contact Me" />
+          <div className="flex items-center gap-3">
+            <div className="w-[50%]">
+              <div className="w-full">
+                <form className="flex flex-col w-full border border-borderTheme-dark p-4 gap-5 rounded-lg">
+                  {/* <p className="opacity-80">
+                    If you have any questions or concerns, please don't hesitate
+                    to contact me. I am open to any work opportunities that
+                    align with my skills and interests.
+                  </p> */}
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className=" text-[15px] font-semibold ms-2"
+                    >
+                      Your Name:
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      className="bg-transparent rounded-full w-full  border border-borderTheme-dark"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className=" text-[15px] font-semibold ms-2"
+                    >
+                      Your Email:
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      className="bg-transparent rounded-full w-full  border border-borderTheme-dark"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className=" text-[15px] font-semibold ms-2"
+                    >
+                      Your Message:
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      className="bg-transparent rounded-full w-full  border border-borderTheme-dark"
+                    />
+                  </div>
+                  <div className="mt-6">
+                    <button className="text-nowrap text-transparent bg-clip-text font-bold text-[18px] flex items-center gap-1 py-2 px-5 border rounded-full border-borderTheme-dark dark:border-borderTheme-light bg-gradient-to-l from-primary1 to-primary2 hover:border-primary1 dark:hover:border-borderTheme-light hover:shadow-inner">
+                      Send Message{" "}
+                      <span className="text-primary1">{contact_icon()}</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div className="w-[50%] flex justify-center items-center">
+              <div>
+                {social_links.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.link}
+                    target="_blank"
+                    className="flex gap-4 items-center text-[15px] font-semibold p-2 border border-borderTheme-dark rounded-lg hover:shadow-lg my-2 text-themeText-light dark:text-themeText-dark "
+                  >
+                    {link.icon(30)}
+                    <span>{link.label}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <Footer />
+    </div>
+  );
+};
+
+export default PortFolio;

@@ -26,7 +26,7 @@ const timeLineInfo = {
   Education: {
     component: ({ institute, logo, standard, duration, isPresent }) => {
       return (
-        <div className=" p-[20px] border border-borderTheme-dark bg-[#00000005] dark:bg-[#ffffff14] rounded-md max-w-[500px] border shadow-lg">
+        <div className=" p-[20px] border-borderTheme-dark bg-[#00000005] dark:bg-[#ffffff14] rounded-md max-w-[500px] border shadow-lg">
           <div className="text-[15px] flex justify-between my-2 opacity-70">
             {isPresent && <span>Present</span>}
             <span>{duration}</span>

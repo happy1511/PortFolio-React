@@ -77,7 +77,7 @@ const timeLineInfo = {
               <a
                 href={githublink}
                 target="_blank"
-                className=" text-white border border-borderTheme-light p-2 rounded-full"
+                className=" text-black dark:text-white border border-borderTheme-light p-2 rounded-full"
               >
                 {github_icon(24)}
               </a>

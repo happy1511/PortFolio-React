@@ -16,15 +16,18 @@ const NavBar = () => {
       </Navbar.Brand>
       <div className="flex md:order-2 gap-2">
         <DarkThemeToggle className="rounded-full" />
-        <button className="text-themeText-light dark:text-themeText-dark flex items-center gap-1 py-2 px-3 border rounded-full border-borderTheme-dark dark:border-borderTheme-light hover:bg-gradient-to-l  from-primary1 to-transparent hover:border-primary1 dark:hover:border-borderTheme-light">
+        <a
+          href="/Happy_Patel_Resume.pdf"
+          download
+          target="_blank"
+          className="text-themeText-light dark:text-themeText-dark flex items-center gap-1 py-2 px-3 border rounded-full border-borderTheme-dark dark:border-borderTheme-light hover:bg-gradient-to-l  from-primary1 to-transparent hover:border-primary1 dark:hover:border-borderTheme-light"
+        >
           {download_icon()}Download Resume
-        </button>
+        </a>
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        <Navbar.Link href="#about">
-          Home
-        </Navbar.Link>
+        <Navbar.Link href="#about">Home</Navbar.Link>
         <Navbar.Link href="#skills">Skills</Navbar.Link>
         <Navbar.Link href="#experience">Experiences</Navbar.Link>
         <Navbar.Link href="#projects">Projects</Navbar.Link>

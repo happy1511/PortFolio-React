@@ -15,6 +15,7 @@ import {
 import { SkillSection } from "../components/Skill";
 import Timeline from "../components/TimeLine";
 import Footer from "../components/Footer";
+import axios from "axios";
 
 const jobs = [
   "Fullstack Developer",
@@ -27,13 +28,21 @@ const jobs = [
   1000,
 ];
 
-const image =
-  "https://genz-nextjs-v3.vercel.app/assets/imgs/page/homepage1/banner.png";
-
-const backImage1 =
-  "https://genz-nextjs-v3.vercel.app/assets/imgs/template/pattern-1.svg";
-
 const PortFolio = () => {
+  const [name, setName] = React.useState("");
+  const [msg, setMsg] = React.useState("");
+  const [mailId, setmailId] = React.useState("");
+  const handleMail = (e) => {
+    e.preventDefault();
+    axios
+      .post("https://portfolio-server-dusky-five.vercel.app", {
+        name,
+        msg,
+        mailId,
+      })
+      .then((res) => console.log(res))
+      .catch((er) => console.log(er));
+  };
   return (
     <div className="flex flex-col items-center bg-themebg-light dark:bg-themebg-dark">
       {/* <AnimatedCursor
@@ -171,7 +180,10 @@ const PortFolio = () => {
           <div className="flex items-center gap-3">
             <div className="w-[50%]">
               <div className="w-full">
-                <form className="flex flex-col w-full border border-borderTheme-dark p-4 gap-5 rounded-lg">
+                <form
+                  className="flex flex-col w-full border border-borderTheme-dark p-4 gap-5 rounded-lg"
+                  onSubmit={handleMail}
+                >
                   {/* <p className="opacity-80">
                     If you have any questions or concerns, please don't hesitate
                     to contact me. I am open to any work opportunities that
@@ -185,8 +197,10 @@ const PortFolio = () => {
                       Your Name:
                     </label>
                     <input
+                      onChange={(e) => setName(e.target.value)}
                       type="text"
                       name="name"
+                      required
                       className="bg-transparent rounded-full w-full  border border-borderTheme-dark"
                     />
                   </div>
@@ -198,7 +212,9 @@ const PortFolio = () => {
                       Your Email:
                     </label>
                     <input
-                      type="text"
+                      onChange={(e) => setmailId(e.target.value)}
+                      type="email"
+                      required
                       name="name"
                       className="bg-transparent rounded-full w-full  border border-borderTheme-dark"
                     />
@@ -211,13 +227,18 @@ const PortFolio = () => {
                       Your Message:
                     </label>
                     <input
+                      onChange={(e) => setMsg(e.target.value)}
+                      required
                       type="text"
                       name="name"
                       className="bg-transparent rounded-full w-full  border border-borderTheme-dark"
                     />
                   </div>
                   <div className="mt-6">
-                    <button className="text-nowrap text-transparent bg-clip-text font-bold text-[18px] flex items-center gap-1 py-2 px-5 border rounded-full border-borderTheme-dark dark:border-borderTheme-light bg-gradient-to-l from-primary1 to-primary2 hover:border-primary1 dark:hover:border-borderTheme-light hover:shadow-inner">
+                    <button
+                      type="submit"
+                      className="text-nowrap text-transparent bg-clip-text font-bold text-[18px] flex items-center gap-1 py-2 px-5 border rounded-full border-borderTheme-dark dark:border-borderTheme-light bg-gradient-to-l from-primary1 to-primary2 hover:border-primary1 dark:hover:border-borderTheme-light hover:shadow-inner"
+                    >
                       Send Message{" "}
                       <span className="text-primary1">{contact_icon()}</span>
                     </button>

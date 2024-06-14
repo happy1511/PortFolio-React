@@ -1,4 +1,5 @@
 import {
+  NextJS_Icon,
   bootstrap_icon,
   express_icon,
   github_icon,
@@ -13,6 +14,7 @@ import {
 
 export const skillArr = [
   "React",
+  "NextJS",
   "React Native",
   "Node.js",
   "Express.js",
@@ -58,6 +60,11 @@ export const skillWithIcon = {
       skill: "ReactJS",
       link: "https://react.dev/",
     },
+    {
+      icon: NextJS_Icon,
+      skill: "NextJS",
+      link: "https://nextjs.org/",
+    },
   ],
   "Backend & Database": [
     {
@@ -79,6 +86,11 @@ export const skillWithIcon = {
       icon: mysql_icon,
       skill: "MySQL",
       link: "https://www.mysql.com/",
+    },
+    {
+      icon: NextJS_Icon,
+      skill: "NextJS",
+      link: "https://nextjs.org/",
     },
   ],
   "Mobile app Development": [
@@ -132,20 +144,32 @@ export const projectInfo = [
     desc: "live stock market paper-trading platform that allows you to check the stock market and trade in real-time.it's a platform where you can learn to trade.",
     techStack: ["React", "Node.js", "Firebase"],
     weblink: "https://learntoearnapp.vercel.app/about",
-    githublink: "https://learntoearnapp.vercel.app/about",
+    githublink: "https://github.com/happy1511/newlearnearn",
   },
   {
     title: "Samaan.com",
     desc: "It is a e-commerce website where you can buy products.Implemented cart functionality.",
     techStack: ["React", "Node.js", "MongoDB"],
+    githublink: "https://github.com/RISHIRGK/Samaan",
     weblink: "https://samaan1.vercel.app/",
   },
   {
     title: "Don't Tap White Game",
     desc: "This is a game where you have to tap on black tiles and avoid white tiles.",
     techStack: ["Django"],
-    weblink: "https://learntoearnapp.vercel.app/about",
     githublink: "https://github.com/happy1511/don-t-tap-white-game-django",
+  },
+  {
+    title: "MSGme",
+    desc: "A website where you can easily chat with your friends.",
+    techStack: ["NextJs"],
+    weblink: "https://chat-web-0ae8.onrender.com/chat",
+  },
+  {
+    title: "MSGme -- App download Page",
+    desc: "static one page website using react.",
+    techStack: ["ReactJS"],
+    weblink: "https://chatapplanding-page.vercel.app/",
   },
   // {
   //   title: "Freelanz",
@@ -170,12 +194,12 @@ export const projectInfo = [
 export const social_links = [
   {
     label: "Github",
-    link: "#",
+    link: "https://github.com/happy1511",
     icon: github_icon,
   },
   {
     label: "Linkedin",
-    link: "#",
+    link: "www.linkedin.com/in/happypatel12",
     icon: linkedin_icon,
   },
   {

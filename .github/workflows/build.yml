@@ -53,6 +53,14 @@ jobs:
         name: build
         path: ./build
 
+    - name: Set up Git
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+    - name: Debug Info - List files
+      run: ls -la ./build
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:

@@ -19,7 +19,6 @@ import { SkillSection } from "../components/Skill";
 import Timeline from "../components/TimeLine";
 import Footer from "../components/Footer";
 import axios from "axios";
-import { useThemeMode } from "flowbite-react";
 
 const jobs = [
   "Fullstack Developer",

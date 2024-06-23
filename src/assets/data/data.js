@@ -34,7 +34,7 @@ export const skillArr = [
 export const socialTags = [
   {
     label: "Github",
-    link: "#",
+    link: "https://github.com/happy1511",
     icon: github_icon,
   },
   {

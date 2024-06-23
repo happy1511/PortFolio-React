@@ -129,13 +129,6 @@ export const eduInfo = [
     duration: "2021 - 2025",
     isPresent: true,
   },
-  {
-    institute: "Uma Vidyalaya",
-    logo: null,
-    standard: "Higher Secondary",
-    duration: "2019 - 2021",
-    isPresent: false,
-  },
 ];
 
 export const projectInfo = [
@@ -199,7 +192,7 @@ export const social_links = [
   },
   {
     label: "Linkedin",
-    link: "www.linkedin.com/in/happypatel12",
+    link: "https://www.linkedin.com/in/happypatel12/",
     icon: linkedin_icon,
   },
   {

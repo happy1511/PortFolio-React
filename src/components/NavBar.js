@@ -27,13 +27,28 @@ const NavBar = () => {
         </a>
         <Navbar.Toggle />
       </div>
-      <Navbar.Collapse>
-        <Navbar.Link href="#about">Home</Navbar.Link>
-        <Navbar.Link href="#skills">Skills</Navbar.Link>
-        <Navbar.Link href="#experience">Experiences</Navbar.Link>
-        <Navbar.Link href="#projects">Projects</Navbar.Link>
-        <Navbar.Link href="#education">Education</Navbar.Link>
-        <Navbar.Link href="#contact">Contact</Navbar.Link>
+      <Navbar.Collapse className="md:static absolute top-[70px] start-0 bg-white md:h-auto h-screen dark:bg-black z-[100] md:p-0 py-2 px-5">
+        <Navbar.Link
+          href="#about"
+          className="md:font-bold md:font-bold font-extrabold"
+        >
+          Home
+        </Navbar.Link>
+        <Navbar.Link href="#skills" className="md:font-bold font-extrabold">
+          Skills
+        </Navbar.Link>
+        <Navbar.Link href="#experience" className="md:font-bold font-extrabold">
+          Experiences
+        </Navbar.Link>
+        <Navbar.Link href="#projects" className="md:font-bold font-extrabold">
+          Projects
+        </Navbar.Link>
+        <Navbar.Link href="#education" className="md:font-bold font-extrabold">
+          Education
+        </Navbar.Link>
+        <Navbar.Link href="#contact" className="md:font-bold font-extrabold">
+          Contact
+        </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
   );

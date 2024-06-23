@@ -39,7 +39,7 @@ export const socialTags = [
   },
   {
     label: "Linkedin",
-    link: "#",
+    link: "https://www.linkedin.com/in/happypatel12/",
     icon: linkedin_icon,
   },
 ];

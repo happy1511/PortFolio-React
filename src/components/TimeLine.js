@@ -55,9 +55,12 @@ const timeLineInfo = {
           </div>
           <div className="my-2  opacity-70">{desc}</div>
           <div className="my-2  opacity-70 flex gap-1">
-            {techStack.map((tech) => {
+            {techStack.map((tech, index) => {
               return (
-                <span className="px-2 py-1 text-[12px] border border-borderTheme-dark rounded-full">
+                <span
+                  key={index}
+                  className="px-2 py-1 text-[12px] border border-borderTheme-dark rounded-full"
+                >
                   {tech}
                 </span>
               );

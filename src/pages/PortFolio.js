@@ -99,7 +99,12 @@ const PortFolio = () => {
                   ))}
                 </div>
                 <div>
-                  <button className="text-nowrap text-transparent bg-clip-text font-bold text-[18px] flex items-center gap-1 py-2 px-5 border rounded-full border-borderTheme-dark dark:border-borderTheme-light bg-gradient-to-l from-primary1 to-primary2 hover:border-primary1 dark:hover:border-borderTheme-light hover:shadow-inner">
+                  <button
+                    onClick={() =>
+                      document.getElementById("contact").scrollIntoView()
+                    }
+                    className="text-nowrap text-transparent bg-clip-text font-bold text-[18px] flex items-center gap-1 py-2 px-5 border rounded-full border-borderTheme-dark dark:border-borderTheme-light bg-gradient-to-l from-primary1 to-primary2 hover:border-primary1 dark:hover:border-borderTheme-light hover:shadow-inner"
+                  >
                     Contact Me{" "}
                     <span className="text-primary1">{contact_icon()}</span>
                   </button>

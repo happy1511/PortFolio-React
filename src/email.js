@@ -85,8 +85,8 @@ const generateHtml = (name, msg, emailID) => {
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1 class="header">Password Reset Request</h1>
+  <div className="container">
+    <h1 className="header">Password Reset Request</h1>
     <p>Hello ${name},</p>
     <p>Someone communicated to you from your portfolio Email:${emailID}.</p>
     <p>${msg}</p>

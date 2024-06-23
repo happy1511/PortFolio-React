@@ -16,6 +16,7 @@ import { SkillSection } from "../components/Skill";
 import Timeline from "../components/TimeLine";
 import Footer from "../components/Footer";
 import axios from "axios";
+import { useThemeMode } from "flowbite-react";
 
 const jobs = [
   "Fullstack Developer",
@@ -32,6 +33,7 @@ const PortFolio = () => {
   const [name, setName] = React.useState("");
   const [msg, setMsg] = React.useState("");
   const [mailId, setmailId] = React.useState("");
+  const mode = useThemeMode();
   const handleMail = (e) => {
     e.preventDefault();
     axios

@@ -68,6 +68,7 @@ const timeLineInfo = {
               <a
                 href={weblink}
                 target="_blank"
+                rel="noreferrer"
                 className=" text-white border border-borderTheme-dark p-2 rounded-full"
               >
                 {link_icon()}
@@ -77,6 +78,7 @@ const timeLineInfo = {
               <a
                 href={githublink}
                 target="_blank"
+                rel="noreferrer"
                 className=" text-black dark:text-white border border-borderTheme-light p-2 rounded-full"
               >
                 {github_icon(24)}

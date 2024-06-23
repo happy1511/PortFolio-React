@@ -20,6 +20,7 @@ const NavBar = () => {
           href="/Happy_Patel_Resume.pdf"
           download
           target="_blank"
+          rel="noreferrer"
           className="text-themeText-light dark:text-themeText-dark flex items-center gap-1 py-2 px-3 border rounded-full border-borderTheme-dark dark:border-borderTheme-light hover:bg-gradient-to-l  from-primary1 to-transparent hover:border-primary1 dark:hover:border-borderTheme-light"
         >
           {download_icon()}Download Resume

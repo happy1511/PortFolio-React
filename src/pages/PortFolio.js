@@ -253,6 +253,7 @@ const PortFolio = () => {
                     key={index}
                     href={link.link}
                     target="_blank"
+                    rel="noreferrer"
                     className="flex gap-4 items-center text-[15px] font-semibold p-2 border border-borderTheme-dark rounded-lg hover:shadow-lg my-2 text-themeText-light dark:text-themeText-dark "
                   >
                     {link.icon(30)}

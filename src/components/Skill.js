@@ -19,7 +19,9 @@ const Skill = ({ icon, skill, link }) => {
   return (
     <a
       target="_blank"
+      rel="noreferrer"
       href={link}
+      rel="noreferrer"
       className="text-themeText-light dark:text-themeText-dark font-semibold flex flex-col items-center justify-center p-2 border border-transparent  rounded hover:shadow-inner"
     >
       <div className="h-[35px] w-[30px]">

@@ -36,7 +36,6 @@ const PortFolio = () => {
   const [name, setName] = React.useState("");
   const [msg, setMsg] = React.useState("");
   const [mailId, setmailId] = React.useState("");
-  const mode = useThemeMode();
   const formRef = React.useRef(null);
   const [loading, setLoading] = React.useState(false);
   const handleMail = (e) => {
@@ -62,15 +61,6 @@ const PortFolio = () => {
     <>
       <ToastContainer />
       <div className="flex flex-col items-center bg-themebg-light dark:bg-themebg-dark">
-        {/* <AnimatedCursor
-        innerSize={10}
-        outerSize={35}
-        outerAlpha={0.2}
-        innerScale={1}
-        hasBlendMode={true}
-        outerScale={2}
-        color={mode === "light" ? "255, 255, 255" : "0, 0, 0"}
-      /> */}
         <div className="max-w-screen-xl w-full min-h-[100dvh]">
           <NavBar />
           <section

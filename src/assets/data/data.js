@@ -1,5 +1,11 @@
 import {
+  C_Icon,
+  Django_Icon,
+  JavaScript_Icon,
+  Java_Icon,
   NextJS_Icon,
+  Python_Icon,
+  TypeScript_Icon,
   bootstrap_icon,
   express_icon,
   github_icon,
@@ -65,6 +71,21 @@ export const skillWithIcon = {
       skill: "NextJS",
       link: "https://nextjs.org/",
     },
+    {
+      icon: Django_Icon,
+      skill: "DJango",
+      link: "https://www.djangoproject.com/",
+    },
+    {
+      icon: TypeScript_Icon,
+      skill: "Typescript",
+      link: "https://www.typescriptlang.org/",
+    },
+    {
+      icon: JavaScript_Icon,
+      skill: "Javascript",
+      link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    },
   ],
   "Backend & Database": [
     {
@@ -92,12 +113,54 @@ export const skillWithIcon = {
       skill: "NextJS",
       link: "https://nextjs.org/",
     },
+    {
+      icon: Django_Icon,
+      skill: "DJango",
+      link: "https://www.djangoproject.com/",
+    },
+    {
+      icon: TypeScript_Icon,
+      skill: "Typescript",
+      link: "https://www.typescriptlang.org/",
+    },
+    {
+      icon: JavaScript_Icon,
+      skill: "Javascript",
+      link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    },
   ],
   "Mobile app Development": [
     {
       icon: react_icon,
       skill: "React Native",
       link: "https://reactnative.dev/",
+    },
+    {
+      icon: TypeScript_Icon,
+      skill: "Typescript",
+      link: "https://www.typescriptlang.org/",
+    },
+    {
+      icon: JavaScript_Icon,
+      skill: "Javascript",
+      link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    },
+  ],
+  "Programming Languages": [
+    {
+      icon: C_Icon,
+      skill: "C",
+      link: "https://www.cprogramming.com/",
+    },
+    {
+      icon: Java_Icon,
+      skill: "Java",
+      link: "https://www.java.com/en/",
+    },
+    {
+      icon: Python_Icon,
+      skill: "Python",
+      link: "https://www.python.org/",
     },
   ],
 };

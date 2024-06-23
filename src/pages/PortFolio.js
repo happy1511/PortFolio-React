@@ -45,7 +45,7 @@ const PortFolio = () => {
   };
   return (
     <div className="flex flex-col items-center bg-themebg-light dark:bg-themebg-dark">
-      {/* <AnimatedCursor
+      <AnimatedCursor
         innerSize={10}
         outerSize={35}
         outerAlpha={0.2}
@@ -53,7 +53,7 @@ const PortFolio = () => {
         hasBlendMode={true}
         outerScale={2}
         color={mode === "dark" ? "255, 255, 255" : "0, 0, 0"}
-      /> */}
+      />
       <div className="max-w-screen-xl w-full min-h-[100dvh]">
         <NavBar />
         <section

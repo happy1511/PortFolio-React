@@ -31,11 +31,12 @@ jobs:
     - name: Debug Info - List files
       run: ls -la
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
+        name: build
+        path: ./build
+
   deploy:
     needs: build
     permissions:
@@ -43,9 +44,17 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${\{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+    - name: Download build artifacts
+      uses: actions/download-artifact@v3
+      with:
+        name: build
+        path: ./build
+
     - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v1
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build

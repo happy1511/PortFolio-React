@@ -1,24 +1,24 @@
-import React from "react";
-import NavBar from "../components/NavBar";
-import { contact_icon, waving_hand } from "../assets/svgs/svgs";
-import { TypeAnimation } from "react-type-animation";
-import Tag from "../components/Tag";
-import CodeText from "../components/CodeText";
 import { Spinner } from "flowbite-react";
-import { ToastContainer, toast } from "react-toastify";
+import React from "react";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { TypeAnimation } from "react-type-animation";
+import { contact_icon, waving_hand } from "../assets/svgs/svgs";
+import CodeText from "../components/CodeText";
+import NavBar from "../components/NavBar";
+import Tag from "../components/Tag";
 
-import Header from "../components/Header";
+import axios from "axios";
 import {
   skillArr,
   skillWithIcon,
   socialTags,
   social_links,
 } from "../assets/data/data";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import { SkillSection } from "../components/Skill";
 import Timeline from "../components/TimeLine";
-import Footer from "../components/Footer";
-import axios from "axios";
 
 const jobs = [
   "Fullstack Developer",
@@ -37,6 +37,7 @@ const PortFolio = () => {
   const [mailId, setmailId] = React.useState("");
   const formRef = React.useRef(null);
   const [loading, setLoading] = React.useState(false);
+
   const handleMail = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -58,7 +59,6 @@ const PortFolio = () => {
   };
   return (
     <>
-      <ToastContainer />
       <div className="flex flex-col items-center bg-themebg-light dark:bg-themebg-dark">
         <div className="max-w-screen-xl w-full min-h-[100dvh]">
           <NavBar />

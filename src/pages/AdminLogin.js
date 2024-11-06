@@ -56,7 +56,7 @@ const AdminLogin = () => {
             position: "top-center",
           });
           localStorage.setItem("adminToken", "adminToken");
-          // window.location.href = "/admin";
+          // navigation.navigate("/admin/dashboard");
         })
         .catch((error) => {
           toast.error("Invalid credentials", {

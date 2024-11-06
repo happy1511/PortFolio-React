@@ -65,7 +65,15 @@ const protectRoute = (route) => {
         <Route path={route.path} element={<route.component />} key={route.id} />
       );
     } else {
-      <Navigate to={"/admin"} />;
+      return route.path !== "/admin" ? (
+        <Route
+          path={route.path}
+          element={<Navigate to="/admin" replace />}
+          key={route.id}
+        />
+      ) : (
+        <Route path={route.path} element={<AdminLogin />} key={route.id} />
+      );
     }
   }
 };

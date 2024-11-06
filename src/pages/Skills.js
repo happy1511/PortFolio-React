@@ -260,6 +260,7 @@ const Skills = () => {
                   <img
                     src={`${process.env.REACT_APP_API_URL}${skill.icon}`}
                     alt=""
+                    className="max-h-10 max-w-10"
                   />
                 </th>
                 <th class="px-6 py-4">{skill?.name}</th>

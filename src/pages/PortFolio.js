@@ -1,20 +1,20 @@
 import { Spinner } from "flowbite-react";
-import React from "react";
+import React, { useEffect } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { TypeAnimation } from "react-type-animation";
-import { contact_icon, waving_hand } from "../assets/svgs/svgs";
+import {
+  contact_icon,
+  github_icon,
+  linkedin_icon,
+  waving_hand,
+} from "../assets/svgs/svgs";
 import CodeText from "../components/CodeText";
 import NavBar from "../components/NavBar";
 import Tag from "../components/Tag";
 
 import axios from "axios";
-import {
-  skillArr,
-  skillWithIcon,
-  socialTags,
-  social_links,
-} from "../assets/data/data";
+import { skillArr, social_links } from "../assets/data/data";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { SkillSection } from "../components/Skill";
@@ -37,6 +37,14 @@ const PortFolio = () => {
   const [mailId, setmailId] = React.useState("");
   const formRef = React.useRef(null);
   const [loading, setLoading] = React.useState(false);
+  const [data, setData] = React.useState({
+    skillsSections: [],
+    projects: [],
+    urls: {
+      github_url: null,
+      linkedin_url: null,
+    },
+  });
 
   const handleMail = (e) => {
     e.preventDefault();
@@ -57,6 +65,19 @@ const PortFolio = () => {
         toast.error("Something went wrong!");
       });
   };
+
+  useEffect(() => {
+    axios
+      .get(process.env.REACT_APP_API_URL)
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data.data);
+      })
+      .catch((er) => {
+        console.log(er);
+      });
+  }, []);
+
   return (
     <>
       <div className="flex flex-col items-center bg-themebg-light dark:bg-themebg-dark">
@@ -94,7 +115,18 @@ const PortFolio = () => {
                   Let's collaborate and bring your digital dreams to life!
                 </p>
                 <div className="flex gap-2 flex-wrap py-3">
-                  {socialTags.map((tag, index) => (
+                  {[
+                    {
+                      label: "Github",
+                      link: data.urls.github_url,
+                      icon: github_icon,
+                    },
+                    {
+                      label: "Linkedin",
+                      link: data.urls.linkedin_url,
+                      icon: linkedin_icon,
+                    },
+                  ].map((tag, index) => (
                     <Tag key={index} {...tag} />
                   ))}
                 </div>
@@ -156,11 +188,11 @@ const PortFolio = () => {
           <section className="py-3 px-7" id="skills">
             <Header title="What I know" />
             <div className="flex justify-between items-start flex-wrap gap-3">
-              {Object.keys(skillWithIcon).map((key, index) => (
+              {data.skillsSections.map((section, index) => (
                 <SkillSection
                   key={index}
-                  title={key}
-                  skills={skillWithIcon[key]}
+                  title={section.name}
+                  skills={section.skills}
                 />
               ))}
             </div>
@@ -168,19 +200,19 @@ const PortFolio = () => {
           <section className="py-3 px-7 my-[80px]" id="experience">
             <Header title="My Experiences" />
             <div className="flex  items-start flex-wrap gap-3">
-              <Timeline dataKey={"Work"} />
+              <Timeline dataKey={"Work"} projects={data.projects} />
             </div>
           </section>
           <section className="py-3 px-7 my-[80px]" id="projects">
             <Header title="Projects" />
             <div className="flex  items-start flex-wrap gap-3">
-              <Timeline dataKey={"Projects"} />
+              <Timeline dataKey={"Projects"} projects={data.projects} />
             </div>
           </section>
           <section className="py-3 px-7 my-[80px]" id="education">
             <Header title="Education" />
             <div className="flex  items-start flex-wrap gap-3">
-              <Timeline dataKey={"Education"} />
+              <Timeline dataKey={"Education"} projects={data.projects} />
             </div>
           </section>
           <section
@@ -196,11 +228,6 @@ const PortFolio = () => {
                     className="flex flex-col w-full border border-borderTheme-dark p-4 gap-5 rounded-lg"
                     onSubmit={handleMail}
                   >
-                    {/* <p className="opacity-80">
-                    If you have any questions or concerns, please don't hesitate
-                    to contact me. I am open to any work opportunities that
-                    align with my skills and interests.
-                  </p> */}
                     <div>
                       <label
                         htmlFor="name"

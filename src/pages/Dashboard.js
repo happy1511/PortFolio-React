@@ -33,7 +33,10 @@ const Dashboard = () => {
 
   const handleURLChange = async (platform, url) => {
     try {
-      await axios.put(`/api/urls/${platform}`, { url });
+      await axios.put(
+        `${process.env.REACT_APP_API_URL}/admin/urls/${platform}`,
+        { url }
+      );
       platform === "github" ? setGithubURL(url) : setLinkedinURL(url);
       alert(`${platform} URL updated successfully`);
     } catch (error) {

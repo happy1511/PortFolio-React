@@ -15,19 +15,22 @@ export const SkillSection = ({ title, skills }) => {
   );
 };
 
-const Skill = ({ icon, skill, link }) => {
+const Skill = ({ icon, name, officialLink }) => {
   return (
     <a
       target="_blank"
       rel="noreferrer"
-      href={link}
+      href={officialLink}
       className="text-themeText-light dark:text-themeText-dark font-semibold flex flex-col items-center justify-center p-2 border border-transparent  rounded hover:shadow-inner"
     >
       <div className="h-[35px] w-[30px]">
-        {icon(skill === "Github" ? 20 : null)}
+        <img
+          src={process.env.REACT_APP_API_URL + icon}
+          className="w-10 h-10 object-contain"
+        />
       </div>
 
-      <div className="text-[15px] font-normal opacity-90">{skill}</div>
+      <div className="text-[15px] font-normal opacity-90">{name}</div>
     </a>
   );
 };

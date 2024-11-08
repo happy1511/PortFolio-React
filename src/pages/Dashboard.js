@@ -20,7 +20,7 @@ const Dashboard = () => {
         .then((response) => {
           const { counts, resumePath, urls } = response.data;
           setCounts(counts);
-          setResumePath(process.env.REACT_APP_API_URL + resumePath);
+          setResumePath(resumePath);
           setGithubURL(urls.github_url);
           setLinkedinURL(urls.linkedin_url);
         })

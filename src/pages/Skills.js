@@ -258,7 +258,11 @@ const Skills = () => {
                   class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
                   <img
-                    src={`${process.env.REACT_APP_API_URL}${skill.icon}`}
+                    src={
+                      skill.icon.includes("cloudinary")
+                        ? skill.icon
+                        : `${process.env.REACT_APP_API_URL}${skill.icon}`
+                    }
                     alt=""
                     className="max-h-10 max-w-10"
                   />

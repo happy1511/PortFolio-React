@@ -108,7 +108,9 @@ const Header = () => (
     <div className="flex md:order-2 gap-2">
       <DarkThemeToggle className="rounded-full" />
       <a
-        href={process.env.REACT_APP_API_URL + "/assets/resumes/Happy_Patel.pdf"}
+        href={
+          "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731069452/resumes/Happy_Patel.pdf"
+        }
         download
         target="_blank"
         rel="noreferrer"

@@ -1,8 +1,17 @@
+import axios from "axios";
+import { DarkThemeToggle, Navbar } from "flowbite-react";
 import React from "react";
-import { Navbar, DarkThemeToggle } from "flowbite-react";
 import { download_icon } from "../assets/svgs/svgs";
 
 const NavBar = () => {
+  const [resumePath, setResumePath] = React.useState("");
+
+  React.useEffect(() => {
+    axios.get(process.env.REACT_APP_API_URL + "/admin/resume").then((res) => {
+      setResumePath(res.data.path);
+    });
+  }, []);
+
   return (
     <Navbar
       fluid
@@ -17,7 +26,7 @@ const NavBar = () => {
       <div className="flex md:order-2 gap-2">
         <DarkThemeToggle className="rounded-full" />
         <a
-          href="/Happy_Patel_Resume.pdf"
+          href={resumePath}
           download
           target="_blank"
           rel="noreferrer"

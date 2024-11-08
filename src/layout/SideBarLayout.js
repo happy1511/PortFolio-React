@@ -73,54 +73,62 @@ const sideBarItems = [
   },
 ];
 
-const Header = () => (
-  <Navbar
-    fluid
-    className="dark:bg-themebg-dark bg-themebg-light py-3 px-7 w-full"
-  >
-    <div className="flex items-center">
-      <button
-        data-drawer-target="sidebar-multi-level-sidebar"
-        data-drawer-toggle="sidebar-multi-level-sidebar"
-        aria-controls="sidebar-multi-level-sidebar"
-        type="button"
-        class="inline-flex items-center p-2 me-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-      >
-        <span class="sr-only">Open sidebar</span>
-        <svg
-          class="w-6 h-6"
-          aria-hidden="true"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
+const Header = () => {
+  const [resumePath, setResumePath] = React.useState("");
+
+  React.useEffect(() => {
+    axios.get(process.env.REACT_APP_API_URL + "/admin/resume").then((res) => {
+      setResumePath(res.data.path);
+    });
+  }, []);
+
+  return (
+    <Navbar
+      fluid
+      className="dark:bg-themebg-dark bg-themebg-light py-3 px-7 w-full"
+    >
+      <div className="flex items-center">
+        <button
+          data-drawer-target="sidebar-multi-level-sidebar"
+          data-drawer-toggle="sidebar-multi-level-sidebar"
+          aria-controls="sidebar-multi-level-sidebar"
+          type="button"
+          class="inline-flex items-center p-2 me-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
         >
-          <path
-            clip-rule="evenodd"
-            fill-rule="evenodd"
-            d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
-          ></path>
-        </svg>
-      </button>
-      <h1 className="text-themebg-dark dark:text-themebg-light font-sans font-bold text-lg">
-        Happy Patel
-      </h1>
-    </div>
-    <div className="flex md:order-2 gap-2">
-      <DarkThemeToggle className="rounded-full" />
-      <a
-        href={
-          "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731069452/resumes/Happy_Patel.pdf"
-        }
-        download
-        target="_blank"
-        rel="noreferrer"
-        className="text-themeText-light dark:text-themeText-dark flex items-center gap-1 py-2 px-3 border rounded-full border-borderTheme-dark dark:border-borderTheme-light hover:bg-gradient-to-l  from-primary1 to-transparent hover:border-primary1 dark:hover:border-borderTheme-light"
-      >
-        {download_icon()}Download Resume
-      </a>
-    </div>
-  </Navbar>
-);
+          <span class="sr-only">Open sidebar</span>
+          <svg
+            class="w-6 h-6"
+            aria-hidden="true"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              fill-rule="evenodd"
+              d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+            ></path>
+          </svg>
+        </button>
+        <h1 className="text-themebg-dark dark:text-themebg-light font-sans font-bold text-lg">
+          Happy Patel
+        </h1>
+      </div>
+      <div className="flex md:order-2 gap-2">
+        <DarkThemeToggle className="rounded-full" />
+        <a
+          href={resumePath}
+          download
+          target="_blank"
+          rel="noreferrer"
+          className="text-themeText-light dark:text-themeText-dark flex items-center gap-1 py-2 px-3 border rounded-full border-borderTheme-dark dark:border-borderTheme-light hover:bg-gradient-to-l  from-primary1 to-transparent hover:border-primary1 dark:hover:border-borderTheme-light"
+        >
+          {download_icon()}Download Resume
+        </a>
+      </div>
+    </Navbar>
+  );
+};
 
 const ChangeResumeModal = ({
   isOpen,

@@ -215,7 +215,6 @@ const AddNewProjectModal = ({ data, isOpen, closeModal }) => {
                 value={project.websiteLink}
                 onChange={handleChange}
                 placeholder="Enter website link"
-                required
               />
             </div>
 

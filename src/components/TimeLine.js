@@ -1,6 +1,11 @@
 import React from "react";
 import { eduInfo, workInfo } from "../assets/data/data";
-import { github_icon, link_icon, map_icon } from "../assets/svgs/svgs";
+import {
+  github_icon,
+  link_icon,
+  map_icon,
+  Video_Icon,
+} from "../assets/svgs/svgs";
 
 const TimeLineCompo = ({ dataKey, projects }) => {
   const timeLineInfo = {
@@ -54,6 +59,7 @@ const TimeLineCompo = ({ dataKey, projects }) => {
         skillsUsed,
         websiteLink,
         githubLink,
+        videoPath,
       }) => {
         return (
           <div className=" p-[20px] border border-borderTheme-dark bg-[#00000005] dark:bg-[#ffffff14] rounded-md max-w-[500px]  shadow-lg">
@@ -92,6 +98,16 @@ const TimeLineCompo = ({ dataKey, projects }) => {
                   className=" text-black dark:text-white border border-borderTheme-light p-2 rounded-full"
                 >
                   {github_icon(24)}
+                </a>
+              )}
+              {videoPath && (
+                <a
+                  href={videoPath}
+                  target="_blank"
+                  rel="noreferrer"
+                  className=" text-black dark:text-white border border-borderTheme-light p-2 rounded-full"
+                >
+                  {Video_Icon(24)}
                 </a>
               )}
             </div>

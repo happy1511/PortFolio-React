@@ -12,7 +12,7 @@ const TimeLineCompo = ({ dataKey, projects }) => {
     Work: {
       component: ({ company, logo, role, duration, desc, employmentType }) => {
         return (
-          <div className=" p-[20px] border border-borderTheme-dark bg-[#00000005] dark:bg-[#ffffff14] rounded-md max-w-[500px] shadow-lg">
+          <div className=" p-[20px] border border-borderTheme-dark bg-[#00000005] dark:bg-[#ffffff14] rounded-md shadow-lg">
             <div className="text-[15px] flex justify-between my-2 opacity-70">
               <span>{employmentType} </span>
               <span>{duration}</span>
@@ -20,7 +20,7 @@ const TimeLineCompo = ({ dataKey, projects }) => {
             <div className="text-[20px] font-semibold bg-gradient-to-l from-primary1 to-primary2 text-transparent bg-clip-text my-2">
               {role}
             </div>
-            <div className="my-2  opacity-70">{desc}</div>
+            <div className="my-2 opacity-70">{desc}</div>
             <div className="text-[15px] flex justify-end pt-3">
               <img src={logo} className="w-[70px]" alt="logo-company" />
             </div>
@@ -32,7 +32,7 @@ const TimeLineCompo = ({ dataKey, projects }) => {
     Education: {
       component: ({ institute, logo, standard, duration, isPresent }) => {
         return (
-          <div className=" p-[20px] border-borderTheme-dark bg-[#00000005] dark:bg-[#ffffff14] rounded-md max-w-[500px] border shadow-lg">
+          <div className="p-[20px] border-borderTheme-dark bg-[#00000005] dark:bg-[#ffffff14] rounded-md  border shadow-lg">
             <div className="text-[15px] flex justify-between my-2 opacity-70">
               {isPresent && <span>Present</span>}
               <span>{duration}</span>
@@ -40,7 +40,7 @@ const TimeLineCompo = ({ dataKey, projects }) => {
             <div className="text-[20px] font-semibold bg-gradient-to-l from-primary1 to-primary2 text-transparent bg-clip-text my-2">
               {standard}
             </div>
-            <div className="my-2  opacity-70 flex justify-start gap-3">
+            <div className="my-2 opacity-70 flex justify-start gap-3">
               {map_icon()}
               {institute}
             </div>
@@ -62,12 +62,12 @@ const TimeLineCompo = ({ dataKey, projects }) => {
         videoPath,
       }) => {
         return (
-          <div className=" p-[20px] border border-borderTheme-dark bg-[#00000005] dark:bg-[#ffffff14] rounded-md max-w-[500px]  shadow-lg">
+          <div className="p-[20px] border border-borderTheme-dark bg-[#00000005] dark:bg-[#ffffff14] rounded-md  shadow-lg">
             <div className="text-[20px] font-semibold bg-gradient-to-l from-primary1 to-primary2 text-transparent bg-clip-text my-2">
               {name}
             </div>
-            <div className="my-2  opacity-70">{description}</div>
-            <div className="my-2  opacity-70 flex gap-1">
+            <div className="my-2 opacity-70">{description}</div>
+            <div className="my-2 opacity-70 flex gap-1 flex-wrap">
               {skillsUsed.map((tech, index) => {
                 return (
                   <span
@@ -85,7 +85,7 @@ const TimeLineCompo = ({ dataKey, projects }) => {
                   href={websiteLink}
                   target="_blank"
                   rel="noreferrer"
-                  className=" text-white border border-borderTheme-dark p-2 rounded-full"
+                  className="text-white border border-borderTheme-dark p-2 rounded-full"
                 >
                   {link_icon()}
                 </a>
@@ -95,7 +95,7 @@ const TimeLineCompo = ({ dataKey, projects }) => {
                   href={githubLink}
                   target="_blank"
                   rel="noreferrer"
-                  className=" text-black dark:text-white border border-borderTheme-light p-2 rounded-full"
+                  className="text-black dark:text-white border border-borderTheme-light p-2 rounded-full"
                 >
                   {github_icon(24)}
                 </a>
@@ -105,7 +105,7 @@ const TimeLineCompo = ({ dataKey, projects }) => {
                   href={videoPath}
                   target="_blank"
                   rel="noreferrer"
-                  className=" text-black dark:text-white border border-borderTheme-light p-2 rounded-full"
+                  className="text-black dark:text-white border border-borderTheme-light p-2 rounded-full"
                 >
                   {Video_Icon(24)}
                 </a>
@@ -114,13 +114,13 @@ const TimeLineCompo = ({ dataKey, projects }) => {
           </div>
         );
       },
-      data: projects,
+      data: projects, // this is where the projects data is passed in
     },
   };
-  console.log("🚀 ~ TimeLineCompo ~ timeLineInfo.Projects.projects:", projects);
+
   const Item = timeLineInfo[dataKey]?.component;
   return (
-    <div className="flex flex-row flex-wrap gap-3 text-themeText-light dark:text-themeText-dark ">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 text-themeText-light dark:text-themeText-dark">
       {timeLineInfo[dataKey]?.data.map((data, index) => (
         <Item key={index} {...data} />
       ))}

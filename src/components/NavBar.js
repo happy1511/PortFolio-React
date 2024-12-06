@@ -30,10 +30,15 @@ const NavBar = () => {
           download
           target="_blank"
           rel="noreferrer"
-          className="text-themeText-light dark:text-themeText-dark flex items-center gap-1 py-2 px-3 border rounded-full border-borderTheme-dark dark:border-borderTheme-light hover:bg-gradient-to-l  from-primary1 to-transparent hover:border-primary1 dark:hover:border-borderTheme-light"
+          className="relative text-themeText-light dark:text-themeText-dark flex items-center  hover:text-white gap-1 py-2 px-3 border font-bold rounded-full border-borderTheme-dark dark:border-borderTheme-light overflow-hidden group"
         >
-          {download_icon()}Download Resume
+          <span className="absolute -inset-x-[4rem] -inset-y-[4rem] bg-gradient-to-tr from-primary1 to-primary2 transform -translate-x-full rotate-45 transition-transform duration-300 ease-in-out group-hover:translate-x-0"></span>
+
+          <span className="relative z-10 flex items-center gap-1">
+            {download_icon()}Download Resume
+          </span>
         </a>
+
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse className="md:static absolute top-[70px] start-0 bg-white md:h-auto h-screen dark:bg-black z-[100] md:p-0 py-2 px-5">

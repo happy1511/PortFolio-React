@@ -268,3 +268,229 @@ export const social_links = [
     ),
   },
 ];
+
+export const jobs = [
+  "MERN stack Developer",
+  1000,
+  "React Native Developer",
+  1000,
+  "React Developer",
+  1000,
+];
+
+export const website_data = {
+  skillsSections: [
+    {
+      _id: "672e0b37a10bcbc245fc1355",
+      name: "Frontend",
+      skills: [
+        {
+          _id: "672e0b685a10edf6ee1a4238",
+          name: "React",
+          officialLink: "https://react.dev/",
+          icon: "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731070822/skills/ntfxtaayxa4rkzdj5eag.svg",
+          __v: 0,
+        },
+        {
+          _id: "672e0be55a10edf6ee1a423c",
+          name: "HTML",
+          officialLink: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+          icon: "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731070948/skills/yepbt34g4beoeggwwwmg.svg",
+          __v: 0,
+        },
+        {
+          _id: "672e0c2a5a10edf6ee1a423f",
+          name: "Tailwind CSS",
+          officialLink: "https://tailwindcss.com/",
+          icon: "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731071016/skills/cha8tiqjoaewwly7ucpj.svg",
+          __v: 0,
+        },
+        {
+          _id: "672e0cabf6b3f2c682185309",
+          name: "Bootstrap",
+          officialLink: "https://getbootstrap.com/",
+          icon: "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731071145/skills/opemktvsmzace33wkm19.svg",
+          __v: 0,
+        },
+        {
+          _id: "672e0ce7f6b3f2c68218530c",
+          name: "Next JS",
+          officialLink: "https://nextjs.org/",
+          icon: "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731071205/skills/bjmdlsidjufgb10dazlr.svg",
+          __v: 0,
+        },
+        {
+          _id: "672e0d11f6b3f2c68218530f",
+          name: "Typescript",
+          officialLink: "https://www.typescriptlang.org/",
+          icon: "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731071247/skills/okxhhh4b4xtaxhpw1z6o.svg",
+          __v: 0,
+        },
+        {
+          _id: "672e0d2df6b3f2c682185312",
+          name: "Javascript",
+          officialLink:
+            "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          icon: "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731071276/skills/sl5ha9jaukf2qljjfkgg.svg",
+          __v: 0,
+        },
+      ],
+      __v: 0,
+    },
+    {
+      _id: "672e0f4df6b3f2c682185322",
+      name: "Backend & Database",
+      skills: [
+        {
+          _id: "672e0ce7f6b3f2c68218530c",
+          name: "Next JS",
+          officialLink: "https://nextjs.org/",
+          icon: "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731071205/skills/bjmdlsidjufgb10dazlr.svg",
+          __v: 0,
+        },
+        {
+          _id: "672e0d11f6b3f2c68218530f",
+          name: "Typescript",
+          officialLink: "https://www.typescriptlang.org/",
+          icon: "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731071247/skills/okxhhh4b4xtaxhpw1z6o.svg",
+          __v: 0,
+        },
+        {
+          _id: "672e0d2df6b3f2c682185312",
+          name: "Javascript",
+          officialLink:
+            "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          icon: "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731071276/skills/sl5ha9jaukf2qljjfkgg.svg",
+          __v: 0,
+        },
+        {
+          _id: "672e0dee3db450af989306da",
+          name: "Node JS",
+          officialLink: "https://nodejs.org/en",
+          icon: "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731071468/skills/xwlttauqi3jzpzyf1ewr.svg",
+          __v: 0,
+        },
+        {
+          _id: "672e0e0b3db450af989306dd",
+          name: "Express JS",
+          officialLink: "https://expressjs.com/",
+          icon: "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731071498/skills/veamsfcbm5qiksteqgzo.svg",
+          __v: 0,
+        },
+        {
+          _id: "672e0ebe3db450af989306e0",
+          name: "MongoDB",
+          officialLink: "https://www.mongodb.com/",
+          icon: "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731071676/skills/wb0ebxx4avniu71euzg1.svg",
+          __v: 0,
+        },
+        {
+          _id: "672e0f1ff6b3f2c68218531b",
+          name: "MySQL",
+          officialLink: "https://www.mysql.com/",
+          icon: "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731071773/skills/pimcbeoanet37xjb51kt.svg",
+          __v: 0,
+        },
+      ],
+      __v: 0,
+    },
+    {
+      _id: "672e0fb4f6b3f2c68218532e",
+      name: "Mobile app Development",
+      skills: [
+        {
+          _id: "672e0d11f6b3f2c68218530f",
+          name: "Typescript",
+          officialLink: "https://www.typescriptlang.org/",
+          icon: "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731071247/skills/okxhhh4b4xtaxhpw1z6o.svg",
+          __v: 0,
+        },
+        {
+          _id: "672e0d2df6b3f2c682185312",
+          name: "Javascript",
+          officialLink:
+            "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          icon: "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731071276/skills/sl5ha9jaukf2qljjfkgg.svg",
+          __v: 0,
+        },
+        {
+          _id: "672e0f9df6b3f2c682185328",
+          name: "React Native",
+          officialLink: "https://reactnative.dev/",
+          icon: "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731071900/skills/bfy1j4p9uixh0tyon9qw.svg",
+          __v: 0,
+        },
+      ],
+      __v: 0,
+    },
+    {
+      _id: "672e1055f6b3f2c68218533f",
+      name: "Programming Languages",
+      skills: [
+        {
+          _id: "672e0ffbf6b3f2c682185336",
+          name: "Java",
+          officialLink: "https://www.java.com/en/",
+          icon: "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731071994/skills/o9aiuz8v0zbahtf8dmuj.svg",
+          __v: 0,
+        },
+        {
+          _id: "672e0fe1f6b3f2c682185333",
+          name: "C",
+          officialLink: "https://www.cprogramming.com/",
+          icon: "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731071967/skills/eop3w3a2jultsw9yfeqy.svg",
+          __v: 0,
+        },
+        {
+          _id: "672e1042f6b3f2c682185339",
+          name: "Python",
+          officialLink: "https://www.python.org/",
+          icon: "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731072065/skills/chksehswwha5qusw0rrc.svg",
+          __v: 0,
+        },
+      ],
+      __v: 0,
+    },
+  ],
+  projects: [
+    {
+      _id: "672a28a3f44f189ad53ec8a6",
+      name: "E-Grocer",
+      description:
+        "e-Grocer is an online grocery platform designed to make shopping convenient and efficient. It offers a wide range of products, from fresh produce to household essentials, all accessible with a user-friendly interface. With features like advanced search filters and flexible delivery options, e-Grocer aims to provide a smooth and reliable shopping experience.",
+      skillsUsed: ["React JS", "Node JS", "SQL"],
+      githubLink: "https://github.com/happy1511/E-Grocer-Frontend",
+      websiteLink: "https://e-grocer.vercel.app/",
+      videoPath: null,
+      __v: 0,
+    },
+    {
+      _id: "672e1153f6b3f2c682185346",
+      name: "MSG Me",
+      description:
+        "A real-time chat application that enables seamless one-to-one communication between users. Users can send and receive messages instantly, manage friend requests, and access their message history. The platform ensures secure user authentication and smooth interactions. This project highlights my ability to create dynamic, interactive web applications with a focus on performance and security.",
+      skillsUsed: ["Next Js", "Prisma", "Postgre SQL", "MongoDB", "Node JS"],
+      githubLink: "https://github.com/happy1511/MSGme_Website",
+      websiteLink: "https://msgme-ljgt.onrender.com/",
+      videoPath:
+        "https://res.cloudinary.com/dszbuhdfz/video/upload/v1731658793/projects/Screen_Recording_2024-11-14_185122_tdo8qn.mp4",
+      __v: 0,
+    },
+    {
+      _id: "672e15e41d5b0457e82c055b",
+      name: "Paper Trading Website",
+      description:
+        "A comprehensive paper trading platform that allows users to simulate buying and selling stocks in a real-time market environment. Users can explore live stock charts, access up-to-date market news, and analyze trading data without financial risk. This project demonstrates my proficiency in developing interactive financial applications with real-time data integration and user-centric features for an immersive trading experience.",
+      skillsUsed: ["React JS", "Firebase", "Node JS", "MongoDB"],
+      githubLink: "https://github.com/happy1511/Paper-Trading",
+      websiteLink: "null",
+      videoPath:
+        "https://res.cloudinary.com/dszbuhdfz/video/upload/v1731073640/projects/belqlci4bqmamzvpuuf8.mp4",
+      __v: 0,
+    },
+  ],
+  urls: {
+    github_url: "https://github.com/happy1511",
+    linkedin_url: "https://www.linkedin.com/in/happypatel12/",
+  },
+};

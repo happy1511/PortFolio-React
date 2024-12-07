@@ -36,7 +36,27 @@ module.exports = {
         light: "#d1d5db40",
       },
     },
-    extend: {},
+    extend: {
+      animation: {
+        flip: "flip 0.6s ease-in-out",
+        flipOut: "flipOut 0.6s ease-in-out",
+        hideVideo: "hideVideo 0.6s ease-in-out",
+      },
+      keyframes: {
+        hideVideo: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+        flip: {
+          "0%": { transform: "rotateY(0deg)" },
+          "100%": { transform: "rotateY(180deg)" },
+        },
+        flipOut: {
+          "0%": { transform: "rotateY(180deg)" },
+          "100%": { transform: "rotateY(0deg)" },
+        },
+      },
+    },
   },
   plugins: [flowbite.plugin()],
 };

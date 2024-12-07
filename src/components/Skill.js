@@ -21,7 +21,7 @@ const Skill = ({ icon, name, officialLink }) => {
       target="_blank"
       rel="noreferrer"
       href={officialLink}
-      className="text-themeText-light dark:text-themeText-dark font-semibold flex flex-col items-center justify-center p-2 border border-transparent  rounded hover:shadow-inner"
+      className="text-themeText-light dark:text-themeText-dark font-semibold flex flex-col items-center justify-center p-2 border border-transparent  rounded"
     >
       <div className="h-[35px] w-[30px]">
         <img src={icon} className="w-full h-full object-contain" />

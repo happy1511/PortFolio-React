@@ -278,10 +278,13 @@ const PortFolioPage = () => {
                     href={link.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex gap-4 items-center text-[15px] font-semibold p-2 border border-borderTheme-dark rounded-lg hover:shadow-lg my-2 text-themeText-light dark:text-themeText-dark "
+                    className="relative overflow-hidden group flex gap-4 hover:text-white items-center text-[15px] font-semibold p-2 border border-borderTheme-dark rounded-lg hover:shadow-lg my-2 text-themeText-light dark:text-themeText-dark "
                   >
-                    {link.icon(30)}
-                    <span>{link.label}</span>
+                    <span className="absolute -inset-x-[4rem] -inset-y-[4rem] bg-gradient-to-tr from-primary1 to-primary2 transform -translate-x-full rotate-45 transition-transform duration-300 ease-in-out group-hover:translate-x-0"></span>
+                    <span className="relative z-10 flex items-center gap-1">
+                      {link.icon(30)}
+                      <span>{link.label}</span>
+                    </span>
                   </a>
                 ))}
               </div>

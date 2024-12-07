@@ -1,22 +1,21 @@
-import axios from "axios";
 import { DarkThemeToggle, Navbar } from "flowbite-react";
 import React from "react";
 import { download_icon } from "../assets/svgs/svgs";
 
 const NavBar = () => {
-  const [resumePath, setResumePath] = React.useState("");
+  // const [resumePath, setResumePath] = React.useState("");
 
-  React.useEffect(() => {
-    axios.get(process.env.REACT_APP_API_URL + "/admin/resume").then((res) => {
-      setResumePath(res.data.path);
-    });
-  }, []);
+  // React.useEffect(() => {
+  //   axios.get(process.env.REACT_APP_API_URL + "/admin/resume").then((res) => {
+  //     setResumePath(res.data.path);
+  //   });
+  // }, []);
 
   return (
     <Navbar
       fluid
       rounded
-      className="dark:bg-themebg-dark bg-themebg-light py-3 px-7"
+      className="dark:bg-themebg-dark bg-themebg-light py-3 px-7  animate-navbarAni"
     >
       <Navbar.Brand href="https://flowbite-react.com" className="md:hidden">
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white hidden md:flex">
@@ -26,7 +25,9 @@ const NavBar = () => {
       <div className="flex md:order-2 gap-2">
         <DarkThemeToggle className="rounded-full" />
         <a
-          href={resumePath}
+          href={
+            "https://res.cloudinary.com/dszbuhdfz/image/upload/v1731333958/resumes/Happy_Patel.pdf"
+          }
           download
           target="_blank"
           rel="noreferrer"

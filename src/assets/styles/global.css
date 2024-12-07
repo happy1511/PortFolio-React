@@ -2,14 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-.rotate-y-180 {
+.flip-container {
+  perspective: 1000;
+}
+/* flip the pane when hovered */
+.flip-container:hover .flipper,
+.flip-container.hover .flipper {
   transform: rotateY(180deg);
 }
 
-.rotate-y-0 {
-  transform: rotateY(0deg);
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
 }
 
-.backface-hidden {
+/* hide back of pane during swap */
+/* .front, */
+.back {
   backface-visibility: hidden;
+
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* color: cornSilk; */
+  /* text-align: center; */
+  /* font: 3em/240px "Helvetica Neue", Helvetica, sans-serif; */
+  /* box-shadow: -5px 5px 5px #aaa; */
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+  /* background: cornflowerBlue; */
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+  /* background: crimson; */
 }

@@ -68,11 +68,15 @@ const PortFolioPage = () => {
         >
           <div className="w-full flex gap-7 lg:items-center items-start flex-col md:flex-row">
             <div className="w-full md:w-[60%]">
-              <p className="text-themeText-light dark:text-themebg-light flex items-center text-[20px]">
-                Hello! <span>{waving_hand()}</span>
+              <p className="text-themeText-light dark:text-themebg-light flex items-center text-[20px] overflow-hidden">
+                <span className="animate-upAni flex items-center">
+                  Hello! <span>{waving_hand()}</span>
+                </span>
               </p>
-              <h1 className="text-themeText-light dark:text-themebg-light text-[50px] font-bold">
-                I'm <span className="text-primary1">Happy Patel </span>
+              <h1 className="overflow-hidden text-themeText-light dark:text-themebg-light flex text-[50px] font-bold">
+                <span className="animate-upAni">
+                  I'm <span className="text-primary1 ">Happy Patel </span>
+                </span>
               </h1>
               <h1>
                 <TypeAnimation
@@ -84,7 +88,7 @@ const PortFolioPage = () => {
                   className="text-themeText-light dark:text-themebg-light"
                 />
               </h1>
-              <p className="text-themeText-light dark:text-themeText-dark opacity-85 text-[14px] py-1">
+              <p className="text-themeText-light dark:text-themeText-dark opacity-85 text-[14px] py-1 animate-opaAni">
                 I craft engaging, user-friendly, visually stunning online
                 experiences and mobile apps using React Native.I turn ideas into
                 dynamic websites and apps that exceed expectations. From
@@ -93,7 +97,7 @@ const PortFolioPage = () => {
                 <br />
                 Let's collaborate and bring your digital dreams to life!
               </p>
-              <div className="flex gap-2 flex-wrap py-3">
+              <div className="flex gap-2 flex-wrap py-3 animate-opaAni">
                 {[
                   {
                     label: "Github",
@@ -109,7 +113,7 @@ const PortFolioPage = () => {
                   <Tag key={index} {...tag} />
                 ))}
               </div>
-              <div>
+              <div className="animate-opaAni">
                 <button
                   onClick={() =>
                     document.getElementById("contact").scrollIntoView()

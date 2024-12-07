@@ -41,8 +41,23 @@ module.exports = {
         flip: "flip 0.6s ease-in-out",
         flipOut: "flipOut 0.6s ease-in-out",
         hideVideo: "hideVideo 0.6s ease-in-out",
+        navbarAni: "navbarAni 0.6s ease-in-out",
+        upAni: "upAni 0.6s ease-in-out",
+        opaAni: "opaAni 0.6s ease-in-out",
       },
       keyframes: {
+        opaAni: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+        upAni: {
+          "0%": { transform: "translateY(90px)" },
+          "100%": { transform: "translateY(0px)" },
+        },
+        navbarAni: {
+          "0%": { transform: "translateY(-50px)" },
+          "100%": { transform: "translateY(0px)" },
+        },
         hideVideo: {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },

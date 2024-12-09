@@ -68,12 +68,12 @@ const PortFolioPage = () => {
         >
           <div className="w-full flex gap-7 lg:items-center items-start flex-col md:flex-row">
             <div className="w-full md:w-[60%]">
-              <p className="text-themeText-light dark:text-themebg-light flex items-center text-[20px] overflow-hidden">
+              <p className="text-themeText-light dark:text-themebg-light flex items-center text-[15px] sm:text-[20px] overflow-hidden">
                 <span className="animate-upAni flex items-center">
                   Hello! <span>{waving_hand()}</span>
                 </span>
               </p>
-              <h1 className="overflow-hidden text-themeText-light dark:text-themebg-light flex text-[50px] font-bold">
+              <h1 className="overflow-hidden text-themeText-light dark:text-themebg-light flex text-[40px] sm:text-[50px] font-bold">
                 <span className="animate-upAni">
                   I'm <span className="text-primary1 ">Happy Patel </span>
                 </span>
@@ -83,9 +83,9 @@ const PortFolioPage = () => {
                   sequence={jobs}
                   wrapper="span"
                   speed={50}
-                  style={{ fontSize: "40px", display: "inline-block" }}
+                  style={{ display: "inline-block" }}
                   repeat={Infinity}
-                  className="text-themeText-light dark:text-themebg-light"
+                  className="text-themeText-light text-[30px] sm:text-[40px] dark:text-themebg-light"
                 />
               </h1>
               <p className="text-themeText-light dark:text-themeText-dark opacity-85 text-[14px] py-1 animate-opaAni">
@@ -125,7 +125,7 @@ const PortFolioPage = () => {
                 </button>
               </div>
             </div>
-            <div className="md:w-[40%] w-full flex justify-center">
+            <div className="md:w-[40%] w-full flex justify-center overflow-hidden">
               <CodeText>
                 <code className="text-themeText-dark flex flex-col gap-1">
                   <div>

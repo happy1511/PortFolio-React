@@ -24,7 +24,7 @@ const TimeLineCompo = ({ dataKey, projects }) => {
           </div>
           <div className="my-2 opacity-70">{desc}</div>
           <div className="text-[15px] flex justify-end pt-3">
-            <img src={logo} className="w-[70px]" alt="logo-company" />
+            <img src={logo} className="w-[30px]" alt="logo-company" />
           </div>
         </div>
       ),
@@ -67,7 +67,7 @@ const TimeLineCompo = ({ dataKey, projects }) => {
           }`}
         >
           {flippedCard === index ? (
-            <div className="relative">
+            <div className="relative animate-flip">
               <button
                 onClick={() => setFlippedCard(null)}
                 className="absolute -top-[10px] -right-[10px] w-[30px] h-[30px] z-10 text-red-700"
@@ -79,7 +79,7 @@ const TimeLineCompo = ({ dataKey, projects }) => {
                 autoPlay
                 controlsList="play nodownload fullscreen  "
                 src={videoPath}
-                className="w-full h-full   rounded"
+                className="w-full h-full rounded"
               ></video>
             </div>
           ) : (

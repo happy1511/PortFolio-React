@@ -1,3 +1,4 @@
+import Crest_Logo from "../../assets/images/Crest_logo.png";
 import {
   C_Icon,
   Django_Icon,
@@ -17,7 +18,6 @@ import {
   react_icon,
   tailwind_icon,
 } from "../svgs/svgs";
-
 export const skillArr = [
   "React",
   "NextJS",
@@ -168,7 +168,7 @@ export const skillWithIcon = {
 export const workInfo = [
   {
     company: "Crest Infotech",
-    logo: "https://www.crestinfotech.com/wp-content/uploads/2023/05/crest-logo.svg",
+    logo: Crest_Logo,
     role: "ReactJS & React-Native Developer",
     duration: "Jan 2024 - Present",
     employmentType: "Full-Time",
@@ -176,7 +176,7 @@ export const workInfo = [
   },
   {
     company: "Crest Infotech",
-    logo: "https://www.crestinfotech.com/wp-content/uploads/2023/05/crest-logo.svg",
+    logo: Crest_Logo,
     role: "ReactJS & React-Native Developer",
     duration: "Sept 2023 - Jan 2024",
     employmentType: "Internship",

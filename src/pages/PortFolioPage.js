@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import axios from "axios";
 import { Spinner } from "flowbite-react";
 import React from "react";
@@ -22,7 +23,6 @@ import NavBar from "../components/NavBar";
 import { SkillSection } from "../components/Skill";
 import Tag from "../components/Tag";
 import Timeline from "../components/TimeLine";
-
 const PortFolioPage = () => {
   const [name, setName] = React.useState("");
   const [msg, setMsg] = React.useState("");
@@ -297,6 +297,7 @@ const PortFolioPage = () => {
         </section>
       </div>
       <Footer />
+      <Analytics />
     </div>
   );
 };

@@ -16,12 +16,22 @@ import {
   linkedin_icon,
   waving_hand,
 } from "../assets/svgs/svgs";
+import { motion } from "framer-motion";
 import CodeText from "../components/CodeText";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import {
+  Reveal,
+  StaggerGroup,
+  StaggerItem,
+  fadeIn,
+  fadeUp,
+} from "../components/motion/motion";
 import NavBar from "../components/NavBar";
+import ScrollProgress from "../components/ScrollProgress";
 import { SkillSection } from "../components/Skill";
 import Tag from "../components/Tag";
+import HeroBackground from "../components/three/HeroBackground";
 import Timeline from "../components/TimeLine";
 const PortFolioPage = () => {
   const [name, setName] = React.useState("");
@@ -60,24 +70,46 @@ const PortFolioPage = () => {
 
   return (
     <div className="flex flex-col items-center bg-themebg-light dark:bg-themebg-dark">
+      <ScrollProgress />
       <div className="max-w-screen-xl w-full min-h-[100dvh]">
         <NavBar />
         <section
-          className="flex flex-col items-center justify-center min-h-[80vh] py-3 px-7"
+          className="relative flex flex-col items-center justify-center min-h-[80vh] py-3 px-7 overflow-hidden"
           id="about"
         >
-          <div className="w-full flex gap-7 lg:items-center items-start flex-col md:flex-row">
+          <HeroBackground />
+          <StaggerGroup
+            className="relative z-10 w-full flex gap-7 lg:items-center items-start flex-col md:flex-row"
+            stagger={0.12}
+            amount={0.1}
+          >
             <div className="w-full md:w-[60%]">
-              <p className="text-themeText-light dark:text-themebg-light flex items-center text-[15px] sm:text-[20px] overflow-hidden">
-                <span className="animate-upAni flex items-center">
-                  Hello! <span>{waving_hand()}</span>
-                </span>
-              </p>
-              <h1 className="overflow-hidden text-themeText-light dark:text-themebg-light flex text-[40px] sm:text-[50px] font-bold">
-                <span className="animate-upAni">
+              <StaggerItem
+                as="p"
+                className="text-themeText-light dark:text-themebg-light flex items-center text-[15px] sm:text-[20px]"
+              >
+                Hello!{" "}
+                <motion.span
+                  animate={{ rotate: [0, 18, -8, 18, 0] }}
+                  transition={{
+                    duration: 1.6,
+                    repeat: Infinity,
+                    repeatDelay: 1.4,
+                    ease: "easeInOut",
+                  }}
+                  style={{ transformOrigin: "70% 80%", display: "inline-flex" }}
+                >
+                  {waving_hand()}
+                </motion.span>
+              </StaggerItem>
+              <StaggerItem
+                as="h1"
+                className="text-themeText-light dark:text-themebg-light flex text-[40px] sm:text-[50px] font-bold"
+              >
+                <span>
                   I'm <span className="text-primary1 ">Happy Patel </span>
                 </span>
-              </h1>
+              </StaggerItem>
               <h1>
                 <TypeAnimation
                   sequence={jobs}
@@ -88,7 +120,11 @@ const PortFolioPage = () => {
                   className="text-themeText-light text-[30px] sm:text-[40px] dark:text-themebg-light"
                 />
               </h1>
-              <p className="text-themeText-light dark:text-themeText-dark opacity-85 text-[14px] py-1 animate-opaAni">
+              <StaggerItem
+                as="p"
+                variants={fadeIn}
+                className="text-themeText-light dark:text-themeText-dark opacity-85 text-[14px] py-1"
+              >
                 I craft engaging, user-friendly, visually stunning online
                 experiences and mobile apps using React Native.I turn ideas into
                 dynamic websites and apps that exceed expectations. From
@@ -96,8 +132,8 @@ const PortFolioPage = () => {
                 specialize in it all.
                 <br />
                 Let's collaborate and bring your digital dreams to life!
-              </p>
-              <div className="flex gap-2 flex-wrap py-3 animate-opaAni">
+              </StaggerItem>
+              <StaggerItem className="flex gap-2 flex-wrap py-3">
                 {[
                   {
                     label: "Github",
@@ -112,9 +148,11 @@ const PortFolioPage = () => {
                 ].map((tag, index) => (
                   <Tag key={index} {...tag} />
                 ))}
-              </div>
-              <div className="animate-opaAni">
-                <button
+              </StaggerItem>
+              <StaggerItem>
+                <motion.button
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.96 }}
                   onClick={() =>
                     document.getElementById("contact").scrollIntoView()
                   }
@@ -122,10 +160,21 @@ const PortFolioPage = () => {
                 >
                   Contact Me{" "}
                   <span className="text-primary1">{contact_icon()}</span>
-                </button>
-              </div>
+                </motion.button>
+              </StaggerItem>
             </div>
-            <div className="md:w-[40%] w-full flex justify-center overflow-hidden">
+            <StaggerItem
+              variants={{
+                hidden: { opacity: 0, x: 60, rotateY: -12 },
+                visible: {
+                  opacity: 1,
+                  x: 0,
+                  rotateY: 0,
+                  transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+                },
+              }}
+              className="md:w-[40%] w-full flex justify-center"
+            >
               <CodeText>
                 <code className="text-themeText-dark flex flex-col gap-1">
                   <div>
@@ -165,8 +214,8 @@ const PortFolioPage = () => {
                   </div>
                 </code>
               </CodeText>
-            </div>
-          </div>
+            </StaggerItem>
+          </StaggerGroup>
         </section>
         <section className="py-3 px-7" id="skills">
           <Header title="What I know" />
@@ -179,6 +228,7 @@ const PortFolioPage = () => {
               />
             ))}
           </div>
+
         </section>
         <section className="py-3 px-7 my-[80px]" id="experience">
           <Header title="My Experiences" />
@@ -198,7 +248,7 @@ const PortFolioPage = () => {
         >
           <Header title="Contact Me" />
           <div className="flex items-center gap-3 flex-col sm:flex-row">
-            <div className="sm:w-[50%] w-full">
+            <Reveal variants={fadeUp} className="sm:w-[50%] w-full">
               <div className="w-full">
                 <form
                   ref={formRef}
@@ -251,7 +301,9 @@ const PortFolioPage = () => {
                     />
                   </div>
                   <div className="mt-6">
-                    <button
+                    <motion.button
+                      whileHover={{ scale: 1.04 }}
+                      whileTap={{ scale: 0.96 }}
                       disabled={loading}
                       type="submit"
                       className="text-nowrap text-transparent bg-clip-text font-bold text-[18px] flex items-center gap-1 py-2 px-5 border rounded-full border-borderTheme-dark dark:border-borderTheme-light bg-gradient-to-l from-primary1 to-primary2 hover:border-primary1 dark:hover:border-borderTheme-light hover:shadow-inner"
@@ -269,16 +321,19 @@ const PortFolioPage = () => {
                           </span>
                         </>
                       )}
-                    </button>
+                    </motion.button>
                   </div>
                 </form>
               </div>
-            </div>
+            </Reveal>
             <div className="sm:w-[50%] w-full flex flex-col sm:flex-row justify-center items-center">
-              <div className="flex sm:flex-col gap-3 flex-row">
+              <StaggerGroup className="flex sm:flex-col gap-3 flex-row" stagger={0.12}>
                 {social_links.map((link, index) => (
-                  <a
+                  <StaggerItem
+                    as="a"
                     key={index}
+                    whileHover={{ scale: 1.05, x: 4 }}
+                    whileTap={{ scale: 0.97 }}
                     href={link.link}
                     target="_blank"
                     rel="noreferrer"
@@ -289,9 +344,9 @@ const PortFolioPage = () => {
                       {link.icon(30)}
                       <span>{link.label}</span>
                     </span>
-                  </a>
+                  </StaggerItem>
                 ))}
-              </div>
+              </StaggerGroup>
             </div>
           </div>
         </section>

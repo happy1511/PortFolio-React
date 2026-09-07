@@ -1,5 +1,7 @@
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 import { eduInfo, workInfo } from "../assets/data/data";
+import { EASE, StaggerGroup, StaggerItem, fadeUp } from "./motion/motion";
 import {
   close_icon,
   github_icon,
@@ -61,13 +63,17 @@ const TimeLineCompo = ({ dataKey, projects }) => {
         videoPath,
         index,
       }) => (
-        <div
-          className={`p-[20px] border border-borderTheme-dark bg-[#00000005] dark:bg-[#ffffff14] rounded-md shadow-lg ${
-            flippedCard === index ? "animate-flip" : ""
-          }`}
-        >
+        <div className="p-[20px] border border-borderTheme-dark bg-[#00000005] dark:bg-[#ffffff14] rounded-md shadow-lg [perspective:1200px]">
+          <AnimatePresence mode="wait" initial={false}>
           {flippedCard === index ? (
-            <div className="relative animate-flip">
+            <motion.div
+              key="video"
+              className="relative"
+              initial={{ rotateY: -90, opacity: 0 }}
+              animate={{ rotateY: 0, opacity: 1 }}
+              exit={{ rotateY: 90, opacity: 0 }}
+              transition={{ duration: 0.4, ease: EASE }}
+            >
               <button
                 onClick={() => setFlippedCard(null)}
                 className="absolute -top-[10px] -right-[10px] w-[30px] h-[30px] z-10 text-red-700"
@@ -81,21 +87,28 @@ const TimeLineCompo = ({ dataKey, projects }) => {
                 src={videoPath}
                 className="w-full h-full rounded"
               ></video>
-            </div>
+            </motion.div>
           ) : (
-            <>
+            <motion.div
+              key="details"
+              initial={{ rotateY: -90, opacity: 0 }}
+              animate={{ rotateY: 0, opacity: 1 }}
+              exit={{ rotateY: 90, opacity: 0 }}
+              transition={{ duration: 0.4, ease: EASE }}
+            >
               <div className="text-[20px] font-semibold bg-gradient-to-l from-primary1 to-primary2 text-transparent bg-clip-text my-2">
                 {name}
               </div>
               <div className="my-2 opacity-70">{description}</div>
               <div className="my-2 opacity-70 flex gap-1 flex-wrap">
-                {skillsUsed.map((tech, index) => (
-                  <span
-                    key={index}
+                {skillsUsed.map((tech, techIndex) => (
+                  <motion.span
+                    key={techIndex}
+                    whileHover={{ scale: 1.08, y: -2 }}
                     className="px-2 py-1 text-[12px] border border-borderTheme-dark rounded-full"
                   >
                     {tech}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
               <div className="flex gap-3 items-center">
@@ -128,8 +141,9 @@ const TimeLineCompo = ({ dataKey, projects }) => {
                   </button>
                 )}
               </div>
-            </>
+            </motion.div>
           )}
+          </AnimatePresence>
         </div>
       ),
       data: projects, // projects data passed here
@@ -138,11 +152,21 @@ const TimeLineCompo = ({ dataKey, projects }) => {
 
   const Item = timeLineInfo[dataKey]?.component;
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 text-themeText-light dark:text-themeText-dark">
+    <StaggerGroup
+      className="grid grid-cols-1 lg:grid-cols-2 gap-6 text-themeText-light dark:text-themeText-dark"
+      stagger={0.12}
+    >
       {timeLineInfo[dataKey]?.data.map((data, index) => (
-        <Item key={index} {...data} index={index} />
+        <StaggerItem
+          key={index}
+          variants={fadeUp}
+          whileHover={{ y: -6 }}
+          transition={{ type: "spring", stiffness: 240, damping: 20 }}
+        >
+          <Item {...data} index={index} />
+        </StaggerItem>
       ))}
-    </div>
+    </StaggerGroup>
   );
 };
 
